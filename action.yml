@@ -29,7 +29,7 @@ runs:
       shell: bash
 
     - name: RunReveal Lint Sigma Detections
-      run: ./runreveal detections lint sigma $DETECTIONS
+      run: ./runreveal lint sigma $DETECTIONS
       shell: bash
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
@@ -37,7 +37,7 @@ runs:
         DETECTIONS: ${{ inputs.sigma-pattern }}
 
     - name: RunReveal Lint SQL Detections
-      run: ./runreveal detections lint sql $DETECTIONS
+      run: ./runreveal lint sql $DETECTIONS
       shell: bash
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
