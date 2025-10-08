@@ -32,15 +32,19 @@ runs:
       shell: bash
 
     - name: RunReveal Lint Sigma Detections
-      run: ./runreveal lint sigma "${{ inputs.sigma-pattern }}"
       shell: bash
+      run: |
+        shopt -s globstar
+        ./runreveal lint sigma '${{ inputs.sigma-pattern }}'
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
         RUNREVEAL_WORKSPACE: ${{ inputs.workspace }}
 
     - name: RunReveal Lint SQL Detections
-      run: ./runreveal lint sql "${{ inputs.sql-pattern }}"
       shell: bash
+      run: |
+        shopt -s globstar
+        ./runreveal lint sql '${{ inputs.sql-pattern }}'
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
         RUNREVEAL_WORKSPACE: ${{ inputs.workspace }}
