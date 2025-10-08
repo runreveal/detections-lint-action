@@ -35,7 +35,7 @@ runs:
       shell: bash
       run: |
         shopt -s globstar
-        ./runreveal lint sigma '${{ inputs.sigma-pattern }}'
+        ./runreveal lint sigma ${{ inputs.sigma-pattern }}
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
         RUNREVEAL_WORKSPACE: ${{ inputs.workspace }}
@@ -44,7 +44,7 @@ runs:
       shell: bash
       run: |
         shopt -s globstar
-        ./runreveal lint sql '${{ inputs.sql-pattern }}'
+        ./runreveal lint sql ${{ inputs.sql-pattern }}
       env:
         RUNREVEAL_TOKEN: ${{ inputs.token }}
         RUNREVEAL_WORKSPACE: ${{ inputs.workspace }}
